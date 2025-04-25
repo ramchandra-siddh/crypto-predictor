@@ -1,12 +1,43 @@
-# React + Vite
+# 🚀 Crypto Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simulated real-time cryptocurrency tracker built with React and Redux. It displays live-looking prices, percent changes, market volume, and trend charts using mock WebSocket updates.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React
+- **Styling**: Tailwind CSS
+- **State Management**: Redux Toolkit
+- **Data Simulation**: Custom WebSocket-like function
+- **Data Source**: Local mock data (`sampleData`)
+- **Chart Display**: Static images for 7-day trend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 Architecture Overview
+
+### Component Breakdown
+
+- **`App.jsx`**  
+  Renders app layout and includes title, `Simul`, and `CryptoTable`.
+
+- **`CryptoTable.jsx`**  
+  Displays cryptocurrency market data. Uses color and arrow indicators to show price trends based on Redux state.
+
+- **`Simul.jsx` + `SimulateWebSocket`**  
+  Simulates real-time updates by modifying price and volume every 1.5 seconds.
+
+---
+
+### 🔄 Redux State Logic
+
+- **`cryptoSlice.js`**
+  - Stores two slices of data:
+    - `prices`: Current coin prices
+    - `prevPrices`: Previous price snapshot to detect changes
+  - The `updatePrices` reducer
+
+## 📸 Demo
+
+![Demo](public/cryptoPredictor.gif)
